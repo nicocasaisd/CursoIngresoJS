@@ -18,7 +18,7 @@ function mostrar()
 */
 	//aleatorio = Math.random();
 	//aleatorio = Math.random() * 11;
-	aleatorio = Math.floor(Math.random() * 11);
+	aleatorio = Math.floor(Math.random() * 10 + 1);
 
 	console.log(aleatorio);
 	//alert(aleatorio);
