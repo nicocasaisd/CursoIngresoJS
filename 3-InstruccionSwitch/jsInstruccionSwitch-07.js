@@ -10,16 +10,16 @@ function mostrar()
 	{
 		case "Bariloche":
 			mensaje = "OESTE";
-			break;
+		break;
 		case "Cataratas":
 			mensaje = "NORTE";
-			break;
+		break;
 		case "Mar del plata":
 			mensaje= "ESTE";
-			break;
+		break;
 		case "Ushuaia":
 			mensaje = "SUR";
-			break;
+		break;
 	}
 
 	alert(mensaje);

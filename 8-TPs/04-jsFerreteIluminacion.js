@@ -11,6 +11,7 @@ Casais Dassie, Nicolás
 TP 4 - FerreteIluminación
 punto A+B+C+D+E
  */
+ /*
 function CalcularPrecio () 
 {
  	// Declaro variables
@@ -29,6 +30,7 @@ function CalcularPrecio ()
     cantidadLamparas = parseInt(cantidadLamparas);
 
     marcaLamparas = document.getElementById('Marca').value;
+*/
 /*
     // Calculo el porcentaje de porcentaje
     //A
@@ -87,6 +89,7 @@ function CalcularPrecio ()
     }
 
 */
+/*
     // Resolución por else if
     if(cantidadLamparas >= 6)
     {
@@ -129,7 +132,164 @@ function CalcularPrecio ()
             porcentaje = 0.05;
         }
     }
-    
+*/
+/*
+// Resolución por switch
+// TP 4 - FerreteIluminacion - A+B+C+D
+// Casais Dassie, Nicolás
+function CalcularPrecio () 
+{
+    // Declaro variables
+    let cantidadLamparas;
+    let marcaLamparas;
+    let precioBase;
+    let precioDescuento;
+    let precioFinal;
+    let ingresosBrutos;
+    let porcentaje = 0;
+    let precioUnidad = 35;
+
+
+    // Obtengo los valores por ID
+    cantidadLamparas = document.getElementById('txtIdCantidad').value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    marcaLamparas = document.getElementById('Marca').value;
+
+    switch(cantidadLamparas)
+    {
+        case 1:
+        case 2:
+            porcentaje = 0;
+        break;
+        case 3:
+            switch(marcaLamparas)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = 0.15;
+                break;
+                case "FelipeLamparas":
+                    porcentaje = 0.1;
+                break;
+                default:
+                    porcentaje = 0.05;
+                break;
+            }
+        break;
+        case 4:
+            switch(marcaLamparas)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje = 0.25;
+                break;
+                default:
+                    porcentaje = 0.2;
+            }
+        break;
+        case 5:
+            switch(marcaLamparas)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = 0.4;
+                break;
+                default:
+                    porcentaje = 0.3;
+                break;
+            }
+        break;
+        default:
+            porcentaje = 0.5;
+        break;
+
+    }
+    // Calculo el precio
+    precioBase = cantidadLamparas * precioUnidad;
+    precioDescuento = precioBase * porcentaje;
+    precioFinal = cantidadLamparas * precioUnidad - precioDescuento;
+
+    // Calculo si debe aplicar ingresos brutos
+    if(precioFinal > 120) //E
+    {
+        ingresosBrutos = precioFinal * 0.1;
+        precioFinal = precioFinal + ingresosBrutos;
+        alert("IIBB: Usted pagó $" + ingresosBrutos);
+    }
+
+    // Muestro el resultado
+    document.getElementById('txtIdprecioDescuento').value = precioFinal;
+
+}
+*/
+
+// Resolución por switch con if adentro
+// TP 4 - FerreteIluminacion - A+B+C+D
+// Casais Dassie, Nicolás
+function CalcularPrecio () 
+{
+    // Declaro variables
+    let cantidadLamparas;
+    let marcaLamparas;
+    let precioBase;
+    let precioDescuento;
+    let precioFinal;
+    let ingresosBrutos;
+    let porcentaje = 0;
+    let precioUnidad = 35;
+
+
+    // Obtengo los valores por ID
+    cantidadLamparas = document.getElementById('txtIdCantidad').value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    marcaLamparas = document.getElementById('Marca').value;
+
+    switch(cantidadLamparas)
+    {
+        case 1:
+        case 2:
+            porcentaje = 0;
+        break;
+        case 3:
+            if(marcaLamparas == "ArgentinaLuz")
+            {
+                porcentaje = 0.15;
+            }
+            else
+            {
+                if(marcaLamparas == "FelipeLamparas")
+                {
+                    porcentaje = 0.1;
+                }
+            }
+        break;
+        case 4:
+            switch(marcaLamparas)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje = 0.25;
+                break;
+                default:
+                    porcentaje = 0.2;
+            }
+        break;
+        case 5:
+            switch(marcaLamparas)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = 0.4;
+                break;
+                default:
+                    porcentaje = 0.3;
+                break;
+            }
+        break;
+        default:
+            porcentaje = 0.5;
+        break;
+
+    }
     // Calculo el precio
     precioBase = cantidadLamparas * precioUnidad;
     precioDescuento = precioBase * porcentaje;

@@ -21,13 +21,13 @@ function piedra()
 	{
 		case 1:
 			mensaje = "Empataste. Piedra con Piedra.";
-			break;
+		break;
 		case 2:
 			mensaje = "Perdiste. Papel envuelve Piedra.";
-			break;
+		break;
 		case 3:
 			mensaje = "Ganaste. Piedra rompe Tijera."
-			break;
+		break;
 	}
 	alert(mensaje);
 
