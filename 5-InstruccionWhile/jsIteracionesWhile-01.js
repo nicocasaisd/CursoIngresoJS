@@ -16,11 +16,13 @@ function mostrar()
 	contador = contador + 1;
 	alert(contador);
 */
-	contador = 0; // 1. Primera parte de la iteración
+	contador = 0; // 1. Inicializamos la variable de control
 
-	while(contador<10) // 2. Segunda parte de la iteración
+	while(contador<10) // 2. Variable de control
 	{
-		contador = contador + 1; // 3. Tercera parte de la iteración
+		//contador = contador + 1; // 3. Modificación de la variable de control
+		// contador ++; // incrementa el valor en 1
+		contador += 1; // idem anterior
 		alert(contador);
 	}
 
