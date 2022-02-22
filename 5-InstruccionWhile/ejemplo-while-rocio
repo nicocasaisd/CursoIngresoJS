@@ -1,0 +1,126 @@
+/*
+Bessio Rocio
+Iteracion WHILE 07
+
+Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
+e informar la suma acumulada y el promedio.
+*/
+function mostrar()
+{
+
+	let alturaCentimetros;
+	let alturaCentimetrosPromedio;
+	let acumuladorAltura;
+	let cantidadVueltasMaxima;
+	let respuesta;
+	let edadIngresada;
+	let temperatura;
+	let sexoIngresado;
+	let notaIngresada;
+	let nombreAlumnoIngresado;
+	let contadorAlumnos;
+	let acumuladorNombreAlumno;
+	let contadorSexoMasculino;
+	let contadorSexoFemenino;
+	let contadorSexoNoBinario;
+	let contadorAlumnosAprobados;
+	let cantidadMujeresAltas;
+
+	//Inicializar:
+	contadorAlumnos=0;
+	contadorSexoMasculino=0;
+	contadorSexoFemenino=0;
+	contadorSexoNoBinario=0;
+	contadorAlumnosAprobados=0;
+	acumuladorAltura=0;
+	cantidadVueltasMaxima=5;
+	cantidadMujeresAltas=0;
+
+	while(contadorAlumnos<cantidadVueltasMaxima)//Ya esta preseteado
+	{
+		alturaCentimetros=prompt("Ingresa la altura en centimetros: ");
+		alturaCentimetros=parseInt(alturaCentimetros);
+		while(alturaCentimetros<0 || alturaCentimetros>250)//si da true entra, fuera del rango que queremos y pdira el ingreso de nuevo
+		{	//se busca el dato equivocado para entrar a while:
+			alturaCentimetros=prompt("ERROR, reingresa la altura (entre 0 y 250): ");
+			alturaCentimetros=parseInt(alturaCentimetros);
+		}//si es falso sale y continua
+		acumuladorAltura=acumuladorAltura+alturaCentimetros;//suma de las alturas
+
+
+		edadIngresada=prompt("Ingresa la edad: ","Ingresa edad");
+		edadIngresada=parseInt(edadIngresada);
+		while(edadIngresada<17 || edadIngresada>80)
+		{
+			edadIngresada=prompt("ERROR, reingresa la edad: ","Ingresa edad");
+			edadIngresada=parseInt(edadIngresada);
+		}
+
+
+		temperatura=prompt("Ingresa la temperatura: ","Ingresa temperatura");
+		temperatura=parseFloat(temperatura);
+					//float si es con coma
+		while(temperatura<30 || temperatura>52)
+		{
+			temperatura=prompt("ERROR, reingresa una temperatura (entre 30 y 51): ","Ingresa temperatura");
+			temperatura=parseFloat(temperatura);
+		}
+
+		sexoIngresado=prompt("Ingresa el sexo: f(femenino), m(masculino) y nb(no binario)","Ingresa sexo");
+		while(sexoIngresado!="f" && sexoIngresado!="m" && sexoIngresado!="nb")
+		{
+			sexoIngresado=prompt("ERROR, reingresa el sexo: f(femenino), m(masculino) y nb(no binario)","Ingresa sexo");
+		}
+		switch(sexoIngresado)//cantidad de personas de cada sexo:
+		{
+			case "f":
+				sexoIngresado="Femenino";
+				contadorSexoFemenino=contadorSexoFemenino+1;
+			break;
+			case "m":
+				sexoIngresado="Masculino";
+				contadorSexoMasculino=contadorSexoMasculino+1;
+			break;
+			default:
+				sexoIngresado="No Binario";
+				contadorSexoNoBinario=contadorSexoNoBinario+1;
+			break;
+		}
+		//d)La cantidad de mujeres que su altura supere los 190 centímetros.
+		if(alturaCentimetros>190 && sexoIngresado=="Femenino")//probar con f si no toma o eliminar en la parte switch
+		{
+			cantidadMujeresAltas=cantidadMujeresAltas+1;
+		}
+
+
+		notaIngresada=prompt("Ingresa la nota: ","Ingresa nota");
+		notaIngresada=parseInt(notaIngresada);
+
+			//isNaN = is Not A Number
+			//devuelve un dato booleano (true or false)
+
+		while(notaIngresada<0 || notaIngresada>10)
+		{
+			notaIngresada=prompt("ERROR, reingresa la nota (entre 1 y 10): ","Ingresa nota");
+			notaIngresada=parseInt(notaIngresada);
+		}
+		if(notaIngresada>5)//c)Cantidad de aprobados(más de 6)
+		{
+			contadorAlumnosAprobados=contadorAlumnosAprobados+1;
+		}
+
+
+		nombreAlumnoIngresado=prompt("Ingresa el nombre del alumno: ","Ingresa nombre");
+
+
+
+		contadorAlumnos=contadorAlumnos+1;
+	}
+
+	alturaCentimetrosPromedio=acumuladorAltura/cantidadVueltasMaxima;
+	document.write()//sacar aca
+
+
+
+}//FIN DE LA FUNCIÓN
+

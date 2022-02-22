@@ -3,6 +3,7 @@ Casais Dassie, Nicolás
 while 8
 Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
+
 function mostrar()
 {
 	let numeroIngresado;
@@ -37,3 +38,5 @@ function mostrar()
 	document.getElementById('txtIdProducto').value=multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN
+
+
